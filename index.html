@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reyz4You-Dep</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-color: #1e1e2f;
+  --text-color: #fff;
+  --card-bg: #2a2a40;
+}
+body.light {
+  --bg-color: #f0f0f0;
+  --text-color: #1e1e2f;
+  --card-bg: #fff;
+}
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition:0.3s;
+  position:relative;
+}
+
+/* Background persegi panjang */
+.top-rectangle {
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:120%;
+  height:200px;
+  background: linear-gradient(135deg,#ff4c60,#6a5cff);
+  border-radius:0 0 50% 50%;
+  z-index:0;
+}
+
+header {
+  position: relative;
+  z-index: 1;
+  padding:50px 20px 20px;
+  text-align:center;
+}
+
+header h1 { margin:0; font-size:32px; color: var(--text-color);}
+header p { margin:5px 0 0; color:#eee;}
+
+.container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:20px;
+  gap:20px;
+  position:relative;
+  z-index:1;
+}
+
+.card {
+  background: var(--card-bg);
+  padding:20px;
+  border-radius:15px;
+  width:250px;
+  text-align:center;
+  transition:0.3s;
+}
+.card:hover { transform:translateY(-5px); box-shadow:0 5px 20px rgba(0,0,0,0.3); }
+.card img { width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:15px;border:3px solid var(--text-color);}
+.card h2 { margin:10px 0 5px;}
+.card p { color:#bbb; font-size:14px;}
+.card a {
+  display:inline-block;
+  margin-top:10px;
+  text-decoration:none;
+  color:#fff;
+  padding:8px 15px;
+  border-radius:8px;
+  transition:0.3s;
+}
+.whatsapp{background:#25D366;}
+.instagram{background:#C13584;}
+.telegram{background:#0088cc;}
+.channel{background:#ff6600;}
+.webshop{background:#6a5cff;}
+.card a:hover {opacity:0.8;}
+
+/* Footer */
+footer {
+  text-align:center;
+  padding:15px;
+  background: var(--card-bg);
+  color:#aaa;
+  margin-top:20px;
+  position:relative;
+  z-index:1;
+}
+
+/* Saklar Tema */
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  z-index:100;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#ccc;
+  transition:0.4s;
+  border-radius:34px;
+}
+
+.slider:before {
+  position: absolute;
+  content:"";
+  height:26px;
+  width:26px;
+  left:4px;
+  bottom:4px;
+  background-color:white;
+  transition:0.4s;
+  border-radius:50%;
+}
+
+input:checked + .slider {
+  background-color: #ff4c60;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+@media (max-width:600px){.container{flex-direction:column;align-items:center;}}
+</style>
+</head>
+<body>
+
+<!-- Saklar Tema Terang/Gelap -->
+<label class="switch">
+  <input type="checkbox" id="themeToggle">
+  <span class="slider"></span>
+</label>
+
+<div class="top-rectangle"></div>
+
+<header>
+  <h1>Reyz4You Official</h1>
+  <p>Selamat datang di dashboard pribadi saya!</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <img src="https://files.catbox.moe/drqa1y.jpg" alt="Foto Profil">
+    <h2>Reyz4You</h2>
+    <p>Seorang developer kreatif dan pecinta teknologi. Selalu ingin belajar hal baru.</p>
+  </div>
+
+  <div class="card">
+    <h2>Kontak Saya</h2>
+    <a href="https://wa.me/6287759094416" target="_blank" class="whatsapp">WhatsApp</a><br>
+    <a href="https://instagram.com/a.c.a.b_404" target="_blank" class="instagram">Instagram</a><br>
+    <a href="https://t.me/Reyz4Youu" target="_blank" class="telegram">Telegram</a><br>
+    <a href="https://whatsapp.com/channel/0029VbAUqzoHbFVEVJlDpA03" target="_blank" class="channel">Channel</a><br>
+    <a href="https://reyz4you-store.vercel.app/" target="_blank" class="webshop">WebsiteShop</a>
+  </div>
+
+  <div class="card">
+    <h2>Hobi & Minat</h2>
+    <p>Programming, Gaming, Musik, dan Membuat Konten Digital.</p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Reyz4You Official. All Rights Reserved.
+</footer>
+
+<script>
+// Saklar Tema
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('light', themeToggle.checked);
+});
+</script>
+
+</body>
+</html>
